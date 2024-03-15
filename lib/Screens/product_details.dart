@@ -1,3 +1,4 @@
+import 'package:farm_ui/Components/button.dart';
 import 'package:farm_ui/Screens/cart.dart';
 import 'package:farm_ui/Utils/Constants/index.dart';
 import 'package:flutter/material.dart';
@@ -83,32 +84,42 @@ class _ProductDetailsState extends State<ProductDetails> {
                         fontSize: 14 * widthP, fontWeight: FontWeight.w400),
                   ),
                   Gap(16),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Cart(),
-                        ),
-                      );
-                    },
-                    style: ElevatedButton.styleFrom(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(12),
-                        ),
-                      ),
-                      backgroundColor: primaryColor,
-                      minimumSize: Size(double.infinity, 52 * heightF),
-                    ),
-                    child: Text(
-                      "Proceed to Checkout",
-                      style: TextStyle(
-                          color: white,
-                          fontSize: 16 * heightF,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
+                  FarmButton(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Cart(),
+                          ),
+                        );
+                      },
+                      text: "Proceed to Checkout"),
+                  // ElevatedButton(
+                  //   onPressed: () {
+                  //     Navigator.push(
+                  //       context,
+                  //       MaterialPageRoute(
+                  //         builder: (context) => const Cart(),
+                  //       ),
+                  //     );
+                  //   },
+                  //   style: ElevatedButton.styleFrom(
+                  //     shape: const RoundedRectangleBorder(
+                  //       borderRadius: BorderRadius.all(
+                  //         Radius.circular(12),
+                  //       ),
+                  //     ),
+                  //     backgroundColor: primaryColor,
+                  //     minimumSize: Size(double.infinity, 52 * heightF),
+                  //   ),
+                  //   child: Text(
+                  //     "Proceed to Checkout",
+                  //     style: TextStyle(
+                  //         color: white,
+                  //         fontSize: 16 * heightF,
+                  //         fontWeight: FontWeight.w600),
+                  //   ),
+                  // ),
                   Gap(40),
                   Text(
                     "Product Specs",
