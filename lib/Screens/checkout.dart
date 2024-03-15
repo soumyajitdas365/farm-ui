@@ -1,7 +1,8 @@
+import 'package:farm_ui/Components/button.dart';
+import 'package:farm_ui/Screens/payment_screen.dart';
+import 'package:farm_ui/Screens/qr_code.dart';
 import 'package:farm_ui/Utils/Constants/index.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class Checkout extends StatefulWidget {
@@ -15,7 +16,7 @@ class _CheckoutState extends State<Checkout> {
   @override
   Widget build(BuildContext context) {
     double widthP = Dimensions.myWidthThis(context);
-    double heightF = Dimensions.myHeightFThis(context);
+    // double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Checkout"),
@@ -93,6 +94,7 @@ class _CheckoutState extends State<Checkout> {
                 ],
               ),
             ),
+           
             Spacer(),
             Column(
               children: [
@@ -148,48 +150,58 @@ class _CheckoutState extends State<Checkout> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(12),
-                        ),
-                      ),
-                      backgroundColor: primaryColor,
-                      minimumSize: Size(double.infinity, 52 * heightF),
+                    child: FarmButton(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => QRCode(),
+                            ),
+                          );
+                        },
+                        text: "Deliver to me")
+                    // ElevatedButton(
+                    //   onPressed: () {},
+                    //   style: ElevatedButton.styleFrom(
+                    //     shape: const RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.all(
+                    //         Radius.circular(12),
+                    //       ),
+                    //     ),
+                    //     backgroundColor: primaryColor,
+                    //     minimumSize: Size(double.infinity, 52 * heightF),
+                    //   ),
+                    //   child: Text(
+                    //     "Deliver to me",
+                    //     style: TextStyle(
+                    //         color: white,
+                    //         fontSize: 16 * heightF,
+                    //         fontWeight: FontWeight.w600),
+                    //   ),
+                    // ),
                     ),
-                    child: Text(
-                      "Deliver to me",
-                      style: TextStyle(
-                          color: white,
-                          fontSize: 16 * heightF,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
                 Gap(20),
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(12),
-                        ),
-                      ),
-                      backgroundColor: primaryColor,
-                      minimumSize: Size(double.infinity, 52 * heightF),
+                Expanded(child: FarmButton(onTap: () {}, text: "I will pick up")
+                    //  ElevatedButton(
+                    //   onPressed: () {},
+                    //   style: ElevatedButton.styleFrom(
+                    //     shape: const RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.all(
+                    //         Radius.circular(12),
+                    //       ),
+                    //     ),
+                    //     backgroundColor: primaryColor,
+                    //     minimumSize: Size(double.infinity, 52 * heightF),
+                    //   ),
+                    //   child: Text(
+                    //     "I will pick up",
+                    //     style: TextStyle(
+                    //         color: white,
+                    //         fontSize: 16 * heightF,
+                    //         fontWeight: FontWeight.w600),
+                    //   ),
+                    // ),
                     ),
-                    child: Text(
-                      "I will pick up",
-                      style: TextStyle(
-                          color: white,
-                          fontSize: 16 * heightF,
-                          fontWeight: FontWeight.w600),
-                    ),
-                  ),
-                ),
               ],
             ),
           ],

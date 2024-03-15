@@ -1,3 +1,4 @@
+import 'package:farm_ui/Components/button.dart';
 import 'package:farm_ui/Screens/checkout.dart';
 import 'package:farm_ui/Utils/Constants/index.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     double widthP = Dimensions.myWidthThis(context);
-    double heightF = Dimensions.myHeightFThis(context);
+    // double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Cart"),
@@ -25,7 +26,9 @@ class _CartState extends State<Cart> {
           children: [
             Container(
               decoration: BoxDecoration(
-                border: Border.all(color: Color(0XFFEAECF0),),
+                border: Border.all(
+                  color: Color(0XFFEAECF0),
+                ),
                 borderRadius: BorderRadius.all(
                   Radius.circular(10),
                 ),
@@ -91,32 +94,42 @@ class _CartState extends State<Cart> {
               ),
             ),
             Spacer(),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const Checkout(),
-                  ),
-                );
-              },
-              style: ElevatedButton.styleFrom(
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12),
-                  ),
-                ),
-                backgroundColor: primaryColor,
-                minimumSize: Size(double.infinity, 52 * heightF),
-              ),
-              child: Text(
-                "Checkout",
-                style: TextStyle(
-                    color: white,
-                    fontSize: 16 * heightF,
-                    fontWeight: FontWeight.w600),
-              ),
-            ),
+            FarmButton(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Checkout(),
+                    ),
+                  );
+                },
+                text: "Checkout"),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.push(
+            //       context,
+            //       MaterialPageRoute(
+            //         builder: (context) => const Checkout(),
+            //       ),
+            //     );
+            //   },
+            //   style: ElevatedButton.styleFrom(
+            //     shape: const RoundedRectangleBorder(
+            //       borderRadius: BorderRadius.all(
+            //         Radius.circular(12),
+            //       ),
+            //     ),
+            //     backgroundColor: primaryColor,
+            //     minimumSize: Size(double.infinity, 52 * heightF),
+            //   ),
+            //   child: Text(
+            //     "Checkout",
+            //     style: TextStyle(
+            //         color: white,
+            //         fontSize: 16 * heightF,
+            //         fontWeight: FontWeight.w600),
+            //   ),
+            // ),
           ],
         ),
       ),
