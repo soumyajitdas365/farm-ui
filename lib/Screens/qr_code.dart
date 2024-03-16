@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:farm_ui/Components/button.dart';
 import 'package:farm_ui/Utils/Constants/index.dart';
 import 'package:flutter/material.dart';
@@ -46,18 +47,21 @@ class _QRCodeState extends State<QRCode> {
             ),
             Gap(37),
             GestureDetector(
-              onTap: (){},
+              onTap: () {},
               child: Container(
                 height: 70 * heightF,
                 width: 349 * widthP,
-                decoration: BoxDecoration(
-
-                  border: Border.all(color: Colors.grey,),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12),
+                child: DottedBorder(
+                  color: Colors.grey,
+                  strokeWidth: 1,
+                  borderType:
+                      BorderType.RRect, 
+                  radius: Radius.circular(12), 
+                  dashPattern: [8,8], 
+                  child: Center(
+                    child: Text("Upload Screenshot"),
                   ),
                 ),
-                child: Center(child: Text("Upload Screenshot")),
               ),
             ),
             Gap(33),
