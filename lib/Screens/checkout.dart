@@ -1,6 +1,6 @@
-import 'package:farm_ui/Components/button.dart';
-import 'package:farm_ui/Screens/payment_screen.dart';
-import 'package:farm_ui/Screens/qr_code.dart';
+
+import 'package:farm_ui/Components/index.dart';
+import 'package:farm_ui/Screens/index.dart';
 import 'package:farm_ui/Utils/Constants/index.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -94,7 +94,6 @@ class _CheckoutState extends State<Checkout> {
                 ],
               ),
             ),
-           
             Spacer(),
             Column(
               children: [
@@ -155,7 +154,7 @@ class _CheckoutState extends State<Checkout> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => QRCode(),
+                              builder: (context) => CropSchedule(),
                             ),
                           );
                         },
@@ -181,7 +180,17 @@ class _CheckoutState extends State<Checkout> {
                     // ),
                     ),
                 Gap(20),
-                Expanded(child: FarmButton(onTap: () {}, text: "I will pick up")
+                Expanded(
+                    child: FarmButton(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AdvisoryPlan(),
+                            ),
+                          );
+                        },
+                        text: "I will pick up")
                     //  ElevatedButton(
                     //   onPressed: () {},
                     //   style: ElevatedButton.styleFrom(

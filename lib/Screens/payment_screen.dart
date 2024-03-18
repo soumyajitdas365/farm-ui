@@ -1,6 +1,5 @@
-
-
 import 'package:farm_ui/Components/index.dart';
+import 'package:farm_ui/Screens/index.dart';
 import 'package:farm_ui/Utils/Constants/index.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -43,9 +42,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
               Gap(12),
               PaymentComponent(
-                  paymentName: "Razorpay",
-                  paymentIcon: Icons.card_giftcard,
-                  onTap: () {}),
+                paymentName: "Razorpay",
+                paymentIcon: Icons.card_giftcard,
+                onTap: () {},
+              ),
               Gap(12),
               Text(
                 "Offline Payment",
@@ -57,14 +57,23 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
               Gap(12),
               PaymentComponent(
-                  paymentName: "QR Code",
-                  paymentIcon: Icons.qr_code,
-                  onTap: () {}),
+                paymentName: "QR Code",
+                paymentIcon: Icons.qr_code,
+                onTap: () {
+                    Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => QRCode(),
+                  ),
+                );
+                },
+              ),
               Gap(12),
               PaymentComponent(
-                  paymentName: "Bank Transfer",
-                  paymentIcon: Icons.food_bank_outlined,
-                  onTap: () {}),
+                paymentName: "Bank Transfer",
+                paymentIcon: Icons.food_bank_outlined,
+                onTap: () {},
+              ),
               Gap(28),
               Text(
                 "Offers",
@@ -76,9 +85,10 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
               Gap(12),
               PaymentComponent(
-                  paymentName: "Select applicable offers",
-                  paymentIcon: Icons.percent_rounded,
-                  onTap: () {}),
+                paymentName: "Select applicable offers",
+                paymentIcon: Icons.percent_rounded,
+                onTap: () {},
+              ),
               Gap(21),
               Text(
                 "Wallet",
@@ -90,10 +100,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
               ),
               Gap(12),
               PaymentComponent(
-                  paymentName: "Use Wallet Balance",
-                  paymentIcon: Icons.wallet,
-                  price: "₹50",
-                  onTap: () {}),
+                paymentName: "Use Wallet Balance",
+                paymentIcon: Icons.wallet,
+                price: "₹50",
+                onTap: () {},
+              ),
               Gap(25),
               Column(
                 children: [

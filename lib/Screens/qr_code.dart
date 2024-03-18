@@ -1,8 +1,9 @@
 import 'package:dotted_border/dotted_border.dart';
-import 'package:farm_ui/Components/button.dart';
+import 'package:farm_ui/Components/index.dart';
+import 'package:farm_ui/Screens/index.dart';
+
 import 'package:farm_ui/Utils/Constants/index.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:gap/gap.dart';
 
 class QRCode extends StatefulWidget {
@@ -65,7 +66,12 @@ class _QRCodeState extends State<QRCode> {
               ),
             ),
             Gap(33),
-            FarmButton(onTap: () {}, text: "Validate Payment")
+            FarmButton(onTap: () {  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => OrderPlacedSuccessfully(),
+                  ),
+                );}, text: "Validate Payment")
           ],
         ),
       ),
