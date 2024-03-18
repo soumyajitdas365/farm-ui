@@ -1,4 +1,5 @@
-import 'package:farm_ui/Screens/product_details.dart';
+
+import 'package:farm_ui/Screens/index.dart';
 import 'package:farm_ui/Utils/Constants/index.dart';
 import 'package:flutter/material.dart';
 

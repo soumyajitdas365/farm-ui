@@ -1,4 +1,5 @@
 import 'package:farm_ui/Components/index.dart';
+import 'package:farm_ui/Screens/index.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -23,7 +24,14 @@ class _AdvisoryPlanState extends State<AdvisoryPlan> {
             PlanContainer(
               title: "Plan 1",
               subtitle: "₹50/5 Question",
-              onTap: () {},
+              onTap: () {
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PaymentScreen(),
+                  ),
+                );
+              },
               titleFontSize: 12,
               subtitleFontSize: 16,
             ),

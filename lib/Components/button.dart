@@ -70,6 +70,7 @@ class _FarmButtonState extends State<FarmButton> {
             Text(
               widget.text,
               style: TextStyle(
+                color: white,
                 fontSize: widget.fontSize ?? 16 * widthP,
                 fontWeight: widget.fontWeight ?? FontWeight.w700,
               ),
