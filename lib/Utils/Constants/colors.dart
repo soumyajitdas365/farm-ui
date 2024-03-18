@@ -11,3 +11,7 @@ Color white = Colors.white;
 Color red = Colors.red;
 
 Color textColor = Color(0XFF2C4364);
+
+Color planTitle = Color(0XFF575D74);
+
+Color planSubtitle = Color(0XFF3E3764);

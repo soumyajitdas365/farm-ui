@@ -1,8 +1,9 @@
-import 'package:farm_ui/Components/index.dart';
+
+import 'package:farm_ui/Components/orders.dart';
+import 'package:farm_ui/Utils/Constants/colors.dart';
+import 'package:farm_ui/Utils/Constants/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
-import '../Utils/Constants/index.dart';
 
 class MyOrders extends StatefulWidget {
   const MyOrders({super.key});
@@ -60,7 +61,7 @@ class _MyOrdersState extends State<MyOrders> {
                 brandName: "Brand",
                 productName: "110 Psi Motor",
                 price: 450,
-                image: "assets/images/motor.png")
+                image: "assets/images/motor.png"),
           ],
         ),
       ),

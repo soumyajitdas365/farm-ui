@@ -1,5 +1,6 @@
-import 'package:farm_ui/Components/index.dart';
-import 'package:farm_ui/Screens/index.dart';
+
+import 'package:farm_ui/Components/plan_containers.dart';
+import 'package:farm_ui/Screens/PaymentFlow/payment_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

@@ -1,6 +1,7 @@
 
-import 'package:farm_ui/Screens/index.dart';
-import 'package:farm_ui/Utils/Constants/index.dart';
+import 'package:farm_ui/Screens/Shops/categories.dart';
+import 'package:farm_ui/Utils/Constants/colors.dart';
+import 'package:farm_ui/Utils/Constants/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
