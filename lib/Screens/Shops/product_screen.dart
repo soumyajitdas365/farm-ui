@@ -1,6 +1,8 @@
 
-import 'package:farm_ui/Screens/index.dart';
-import 'package:farm_ui/Utils/Constants/index.dart';
+import 'package:farm_ui/Screens/Shops/product_details.dart';
+import 'package:farm_ui/Utils/Constants/colors.dart';
+import 'package:farm_ui/Utils/Constants/dimensions.dart';
+
 import 'package:flutter/material.dart';
 
 class ProductScreen extends StatefulWidget {

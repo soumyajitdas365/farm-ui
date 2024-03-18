@@ -57,14 +57,14 @@ class _PlanContainerState extends State<PlanContainer> {
               widget.title,
               style: TextStyle(
                   fontSize: widget.titleFontSize,
-                  color: widget.titleFontColor ?? textColor,
+                  color: widget.titleFontColor ?? planTitle,
                   fontWeight: FontWeight.w400),
             ),
             subtitle: Text(
               widget.subtitle,
               style: TextStyle(
                   fontSize: widget.subtitleFontSize,
-                  color: widget.subtitleFontColor ?? textColor,
+                  color: widget.subtitleFontColor ?? planSubtitle,
                   fontWeight: FontWeight.w400),
             ),
             trailing: Icon(

@@ -13,6 +13,7 @@ dependencies:
   gap:
   percent_indicator: 
   dotted_border: ^2.1.0
+  nil: ^1.1.1
 
 dev_dependencies:
   flutter_test:
