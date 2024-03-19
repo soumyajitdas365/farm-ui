@@ -120,10 +120,11 @@ class _HomePageState extends State<HomePage> {
             ),
             Spacer(),
             ElevatedButton(
-                onPressed: () {
-                  YoutubeData().getPlaylistData("UCOmYlWkw8Lh8oNaujBVGFsQ");
-                },
-                child: Text("Retry"))
+              onPressed: () {
+                YoutubeData().getPlaylistData("UCOmYlWkw8Lh8oNaujBVGFsQ");
+              },
+              child: Text("Retry"),
+            ),
           ],
         ),
       ),
