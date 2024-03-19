@@ -1,10 +1,9 @@
-
 import 'package:farm_ui/Screens/Shops/categories.dart';
 import 'package:farm_ui/Utils/Constants/colors.dart';
 import 'package:farm_ui/Utils/Constants/dimensions.dart';
+import 'package:farm_ui/youtube_data.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -63,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-                  Gap(16),
+            Gap(16),
             SizedBox(
               height: 160 * heightF,
               child: ListView.builder(
@@ -88,7 +87,8 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsets.only(left: 12, bottom: 14),
+                            padding:
+                                const EdgeInsets.only(left: 12, bottom: 14),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.end,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -112,12 +112,18 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                            Gap(12),
+                      Gap(12),
                     ],
                   );
                 },
               ),
             ),
+            Spacer(),
+            ElevatedButton(
+                onPressed: () {
+                  YoutubeData().getPlaylistData("UCOmYlWkw8Lh8oNaujBVGFsQ");
+                },
+                child: Text("Retry"))
           ],
         ),
       ),

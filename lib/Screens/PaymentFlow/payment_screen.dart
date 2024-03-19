@@ -21,10 +21,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       appBar: AppBar(
         title: Text(
           "Payment",
-          style: TextStyle(
-              fontSize: 24 * widthP,
-              fontWeight: FontWeight.w600,
-              color: textColor),
+          style: TextStyle(fontWeight: FontWeight.w600, color: textColor),
         ),
       ),
       body: SingleChildScrollView(
@@ -61,12 +58,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
                 paymentName: "QR Code",
                 paymentIcon: Icons.qr_code,
                 onTap: () {
-                    Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => QRCode(),
-                  ),
-                );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QRCode(),
+                    ),
+                  );
                 },
               ),
               Gap(12),
