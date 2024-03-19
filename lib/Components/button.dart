@@ -10,6 +10,7 @@ class FarmButton extends StatefulWidget {
     this.height,
     this.borderRadius,
     this.backgroundColor,
+    this.borderColor,
     required this.text,
     this.fontColor,
     this.fontSize,
@@ -20,12 +21,10 @@ class FarmButton extends StatefulWidget {
   final double? width;
   final double? height;
   final double? borderRadius;
-
   final Color? backgroundColor;
+  final Color? borderColor;
   final String text;
-
   final Color? fontColor;
-
   final double? fontSize;
   final FontWeight? fontWeight;
 
@@ -50,6 +49,11 @@ class _FarmButtonState extends State<FarmButton> {
             Radius.circular(widget.borderRadius ?? 12 * widthP),
           ),
           color: widget.backgroundColor ?? const Color(0XFFCA9A62),
+          border: Border.all(
+            color: widget.borderColor ??
+                Colors.transparent,
+                width: 2
+          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

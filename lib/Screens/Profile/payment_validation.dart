@@ -1,5 +1,6 @@
 import 'package:farm_ui/Components/button.dart';
 import 'package:farm_ui/Components/subscription_tile.dart';
+import 'package:farm_ui/Screens/Profile/community_profile_user.dart';
 import 'package:farm_ui/Utils/Constants/colors.dart';
 import 'package:farm_ui/Utils/Constants/dimensions.dart';
 import 'package:flutter/material.dart';
@@ -121,7 +122,14 @@ class _PaymentValidationState extends State<PaymentValidation> {
             ),
             Gap(28),
             FarmButton(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const CommunityProfileUser(),
+                  ),
+                );
+              },
               text: "Approval Pending",
               backgroundColor: Color(0XFFCFCFCF),
             ),
