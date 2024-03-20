@@ -1,5 +1,5 @@
 
-import 'package:farm_ui/Screens/notifications.dart';
+import 'package:farm_ui/Screens/OtherScreens/notifications.dart';
 import 'package:farm_ui/Utils/Constants/colors.dart';
 import 'package:flutter/material.dart';
 
