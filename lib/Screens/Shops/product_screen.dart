@@ -85,7 +85,7 @@ class _ProductScreenState extends State<ProductScreen> {
                           Text(
                             "Category",
                             style: TextStyle(
-                                color: Color(0XFF838FA0),
+                                color:secondaryTextColor,
                                 fontSize: 12 * widthP,
                                 fontWeight: FontWeight.w400),
                           ),

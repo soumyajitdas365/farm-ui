@@ -56,7 +56,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   Text(
                     "Category",
                     style: TextStyle(
-                        color: Color(0XFF838FA0),
+                        color:secondaryTextColor,
                         fontSize: 14 * widthP,
                         fontWeight: FontWeight.w400),
                   ),
