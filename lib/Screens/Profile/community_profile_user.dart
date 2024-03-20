@@ -87,7 +87,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                 style: TextStyle(
                                   fontSize: 16 * widthP,
                                   fontWeight: FontWeight.w400,
-                                  color: Color(0XFF838FA0),
+                                  color:secondaryTextColor,
                                 ),
                               ),
                             ],
@@ -109,7 +109,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                 style: TextStyle(
                                   fontSize: 16 * widthP,
                                   fontWeight: FontWeight.w400,
-                                  color: Color(0XFF838FA0),
+                                  color:secondaryTextColor,
                                 ),
                               ),
                             ],
@@ -131,7 +131,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                 style: TextStyle(
                                   fontSize: 16 * widthP,
                                   fontWeight: FontWeight.w400,
-                                  color: Color(0XFF838FA0),
+                                  color:secondaryTextColor,
                                 ),
                               ),
                             ],
@@ -211,7 +211,9 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                       ],
                     ),
                   ),
+                  Gap(28),
                   ListView.builder(
+                    padding: EdgeInsets.zero,
                     physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: 5,
@@ -279,7 +281,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                   Text(
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                                     style: TextStyle(
-                                      color: Color(0XFF838FA0),
+                                      color:secondaryTextColor,
                                     ),
                                   ),
                                   Gap(20),
@@ -293,7 +295,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                       Text(
                                         "2.5k",
                                         style: TextStyle(
-                                            color: Color(0XFF838FA0),
+                                            color:secondaryTextColor,
                                             fontSize: 12 * widthP),
                                       ),
                                       Gap(24),
@@ -303,7 +305,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                       Text(
                                         "3.1k",
                                         style: TextStyle(
-                                            color: Color(0XFF838FA0),
+                                            color:secondaryTextColor,
                                             fontSize: 12 * widthP),
                                       ),
                                       Spacer(),

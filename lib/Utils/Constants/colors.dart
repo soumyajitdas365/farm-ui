@@ -19,3 +19,5 @@ Color planSubtitle = Color(0XFF3E3764);
 Color profileIcon = Color(0XFFFFECD6);
 
 Color chipColor = Color(0XFFF7F0E8);
+
+Color secondaryTextColor =Color(0XFF838FA0);
