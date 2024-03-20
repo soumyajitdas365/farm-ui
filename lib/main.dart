@@ -1,5 +1,6 @@
 
 import 'package:farm_ui/Screens/OtherScreens/notifications.dart';
+import 'package:farm_ui/Screens/Shops/homepage.dart';
 import 'package:farm_ui/Utils/Constants/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(scaffoldBackgroundColor: white),
-      home: Notifications(),
+      home: HomePage(),
     );
   }
 }
