@@ -18,7 +18,9 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
     // double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
       extendBodyBehindAppBar: true,
+      
       appBar: AppBar(
+        
         backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(

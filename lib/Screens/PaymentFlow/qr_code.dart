@@ -17,6 +17,7 @@ class _QRCodeState extends State<QRCode> {
     double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           "QR Code",
           style: TextStyle(fontWeight: FontWeight.w600),

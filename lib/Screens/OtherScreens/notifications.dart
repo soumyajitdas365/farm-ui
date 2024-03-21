@@ -3,6 +3,7 @@ import 'package:farm_ui/Components/notification_component.dart';
 import 'package:farm_ui/Utils/Constants/colors.dart';
 import 'package:farm_ui/Utils/Constants/dimensions.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({super.key});
@@ -67,9 +68,7 @@ class _NotificationsState extends State<Notifications> {
               Divider(
                 color: Color(0XFFEEEEEE),
               ),
-              SizedBox(
-                height: 20,
-              ),
+             Gap(20),
               Text(
                 "Yesterday",
                 style: TextStyle(
@@ -95,9 +94,7 @@ class _NotificationsState extends State<Notifications> {
               Divider(
                 color: Color(0XFFEEEEEE),
               ),
-              SizedBox(
-                height: 20,
-              ),
+             Gap(20),
               Text(
                 "This week",
                 style: TextStyle(

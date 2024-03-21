@@ -20,6 +20,7 @@ class _PaymentValidationState extends State<PaymentValidation> {
     double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           "Payment Validation",
           style: TextStyle(
