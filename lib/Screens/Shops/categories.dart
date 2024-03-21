@@ -35,7 +35,7 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     double widthP = Dimensions.myWidthThis(context);
-    double heightF = Dimensions.myHeightFThis(context);
+    // double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(

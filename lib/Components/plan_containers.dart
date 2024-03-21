@@ -42,54 +42,50 @@ class PlanContainer extends StatefulWidget {
 class _PlanContainerState extends State<PlanContainer> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: InkWell(
+    return Container(
+      width: widget.width,
+      height: widget.height,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(widget.borderRadius ?? 12),
+      ),
+      child: ListTile(
         onTap: widget.onTap,
-        child: Container(
-          width: widget.width,
-          height: widget.height,
+        title: Text(
+          widget.title,
+          style: TextStyle(
+              fontSize: widget.titleFontSize,
+              color: widget.titleFontColor ?? planTitle,
+              fontWeight: FontWeight.w400),
+        ),
+        subtitle: Text(
+          widget.subtitle,
+          style: TextStyle(
+              fontSize: widget.subtitleFontSize,
+              color: widget.subtitleFontColor ?? planSubtitle,
+              fontWeight: FontWeight.w400),
+        ),
+        trailing: Icon(
+          Icons.arrow_forward_outlined,
+          color: widget.trailingIconColor ?? primaryColor,
+          size: widget.trailingIconSize ?? 35,
+        ),
+        leading: Container(
+          height: 42,
+          width: 42,
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(widget.borderRadius ?? 12),
+            border: Border.all(
+              color: Color(0XFFAAA0E7),
+            ),
+            color: Color(0XFFE2DFF7),
+            borderRadius: BorderRadius.all(
+              Radius.circular(50),
+            ),
           ),
-          child: ListTile(
-            title: Text(
-              widget.title,
-              style: TextStyle(
-                  fontSize: widget.titleFontSize,
-                  color: widget.titleFontColor ?? planTitle,
-                  fontWeight: FontWeight.w400),
-            ),
-            subtitle: Text(
-              widget.subtitle,
-              style: TextStyle(
-                  fontSize: widget.subtitleFontSize,
-                  color: widget.subtitleFontColor ?? planSubtitle,
-                  fontWeight: FontWeight.w400),
-            ),
-            trailing: Icon(
-              Icons.arrow_forward_outlined,
-              color: widget.trailingIconColor ?? primaryColor,
-              size: widget.trailingIconSize ?? 35,
-            ),
-            leading: Container(
-              height: 42,
-              width: 42,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Color(0XFFAAA0E7),
-                ),
-                color: Color(0XFFE2DFF7),
-                borderRadius: BorderRadius.all(
-                  Radius.circular(50),
-                ),
-              ),
-              child: Icon(
-                Icons.diamond,
-                color: widget.leadingIconColor ?? primaryColor,
-                size: widget.leadingIconSize??25,
-              ),
-            ),
+          child: Icon(
+            Icons.diamond,
+            color: widget.leadingIconColor ?? primaryColor,
+            size: widget.leadingIconSize ?? 25,
           ),
         ),
       ),

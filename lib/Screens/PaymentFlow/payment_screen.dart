@@ -19,6 +19,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
     // double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           "Payment",
           style: TextStyle(fontWeight: FontWeight.w600, color: textColor),

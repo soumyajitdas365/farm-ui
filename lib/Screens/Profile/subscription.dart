@@ -19,6 +19,7 @@ class _SubscriptionState extends State<Subscription> {
     // double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Subscription"),
       ),
       body: Padding(

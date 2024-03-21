@@ -16,6 +16,7 @@ class _AdvisoryPlanState extends State<AdvisoryPlan> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Advisory Plan"),
       ),
       body: Padding(

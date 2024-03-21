@@ -16,6 +16,7 @@ class _CropScheduleState extends State<CropSchedule> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Crop Schedule"),
       ),
       body: Padding(

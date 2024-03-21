@@ -36,48 +36,46 @@ class _PaymentComponentState extends State<PaymentComponent> {
   Widget build(BuildContext context) {
     double widthP = Dimensions.myWidthThis(context);
     // double heightF = Dimensions.myHeightFThis(context);
-    return Material(
-      child: InkWell(
-        onTap: widget.onTap,
-        child: Container(
-          height: widget.height ?? 74,
-          width: widget.width ?? double.infinity,
-          decoration: BoxDecoration(
-            border: Border.all(color: widget.borderColor ?? Colors.grey),
-            borderRadius: BorderRadius.circular(12),
-            color: widget.backgroundColor,
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Row(
-              children: [
-                Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(
-                    color: Color(0XFFFFECD6),
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Icon(widget.paymentIcon),
+    return InkWell(
+      onTap: widget.onTap,
+      child: Container(
+        height: widget.height ?? 74,
+        width: widget.width ?? double.infinity,
+        decoration: BoxDecoration(
+          border: Border.all(color: widget.borderColor ?? Colors.grey),
+          borderRadius: BorderRadius.circular(12),
+          color: widget.backgroundColor,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Row(
+            children: [
+              Container(
+                height: 50,
+                width: 50,
+                decoration: BoxDecoration(
+                  color: Color(0XFFFFECD6),
+                  borderRadius: BorderRadius.circular(25),
                 ),
-                const Gap(22),
-                Text(
-                  widget.paymentName,
-                  style: TextStyle(
-                      fontSize: 16 * widthP, fontWeight: FontWeight.w500),
-                ),
-                const Spacer(),
-                if (widget.price != null) ...[
-                  Text(widget.price!),
-                  const Gap(13),
-                ],
+                child: Icon(widget.paymentIcon),
+              ),
+              const Gap(22),
+              Text(
+                widget.paymentName,
+                style: TextStyle(
+                    fontSize: 16 * widthP, fontWeight: FontWeight.w500),
+              ),
+              const Spacer(),
+              if (widget.price != null) ...[
+                Text(widget.price!),
                 const Gap(13),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  color: widget.iconColor,
-                ),
               ],
-            ),
+              const Gap(13),
+              Icon(
+                Icons.arrow_forward_ios,
+                color: widget.iconColor,
+              ),
+            ],
           ),
         ),
       ),
