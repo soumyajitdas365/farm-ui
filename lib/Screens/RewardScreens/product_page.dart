@@ -1,4 +1,5 @@
 import 'package:farm_ui/Components/button.dart';
+import 'package:farm_ui/Components/dot_indicator.dart';
 import 'package:farm_ui/Components/reward_tile.dart';
 import 'package:farm_ui/Utils/Constants/colors.dart';
 import 'package:farm_ui/Utils/Constants/dimensions.dart';
@@ -52,6 +53,7 @@ class _ProductpageState extends State<Productpage> {
     double widthP = Dimensions.myWidthThis(context);
     // double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -198,21 +200,4 @@ class _ProductpageState extends State<Productpage> {
   }
 }
 
-class Indicator extends StatelessWidget {
-  final bool isActive;
 
-  const Indicator({Key ?key, this.isActive = false}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.symmetric(horizontal: 4),
-      height: 8,
-      width: 8,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: isActive ? Colors.blue : Colors.grey,
-      ),
-    );
-  }
-}
