@@ -45,7 +45,6 @@ class _AdvisoryState extends State<Advisory> {
             ),
             Gap(14),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
                   onTap: () {
