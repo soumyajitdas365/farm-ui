@@ -18,9 +18,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
     // double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
       extendBodyBehindAppBar: true,
-      
       appBar: AppBar(
-        
         backgroundColor: Colors.transparent,
       ),
       body: SingleChildScrollView(
@@ -89,7 +87,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                 style: TextStyle(
                                   fontSize: 16 * widthP,
                                   fontWeight: FontWeight.w400,
-                                  color:secondaryTextColor,
+                                  color: secondaryTextColor,
                                 ),
                               ),
                             ],
@@ -111,7 +109,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                 style: TextStyle(
                                   fontSize: 16 * widthP,
                                   fontWeight: FontWeight.w400,
-                                  color:secondaryTextColor,
+                                  color: secondaryTextColor,
                                 ),
                               ),
                             ],
@@ -133,7 +131,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                 style: TextStyle(
                                   fontSize: 16 * widthP,
                                   fontWeight: FontWeight.w400,
-                                  color:secondaryTextColor,
+                                  color: secondaryTextColor,
                                 ),
                               ),
                             ],
@@ -283,7 +281,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                   Text(
                                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
                                     style: TextStyle(
-                                      color:secondaryTextColor,
+                                      color: secondaryTextColor,
                                     ),
                                   ),
                                   Gap(20),
@@ -297,7 +295,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                       Text(
                                         "2.5k",
                                         style: TextStyle(
-                                            color:secondaryTextColor,
+                                            color: secondaryTextColor,
                                             fontSize: 12 * widthP),
                                       ),
                                       Gap(24),
@@ -307,7 +305,7 @@ class _CommunityProfileUserState extends State<CommunityProfileUser> {
                                       Text(
                                         "3.1k",
                                         style: TextStyle(
-                                            color:secondaryTextColor,
+                                            color: secondaryTextColor,
                                             fontSize: 12 * widthP),
                                       ),
                                       Spacer(),
