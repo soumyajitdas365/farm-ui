@@ -1,4 +1,5 @@
 import 'package:farm_ui/Components/radio_card_schedule.dart';
+import 'package:farm_ui/Screens/CropSchedule/irrigation.dart';
 import 'package:farm_ui/Utils/Constants/colors.dart';
 import 'package:farm_ui/Utils/Constants/dimensions.dart';
 import 'package:flutter/material.dart';
@@ -6,14 +7,15 @@ import 'package:gap/gap.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class ScheduleTimeline extends StatefulWidget {
-  const ScheduleTimeline({super.key});
+  const ScheduleTimeline({Key? key}) : super(key: key);
 
   @override
   State<ScheduleTimeline> createState() => _ScheduleTimelineState();
 }
 
 class _ScheduleTimelineState extends State<ScheduleTimeline> {
-  bool isTicked = false;
+  int _selectedOptionIndex = -1;
+
   @override
   Widget build(BuildContext context) {
     double widthP = Dimensions.myWidthThis(context);
@@ -38,7 +40,7 @@ class _ScheduleTimelineState extends State<ScheduleTimeline> {
               headerStyle: HeaderStyle(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Color(0XFFEAECF0),
+                    color: borderColor
                   ),
                 ),
                 titleCentered: true,
@@ -52,7 +54,7 @@ class _ScheduleTimelineState extends State<ScheduleTimeline> {
                 isTodayHighlighted: true,
                 tableBorder: TableBorder.symmetric(
                   outside: BorderSide(
-                    color: Color(0XFFEAECF0),
+                    color: borderColor
                   ),
                 ),
                 todayDecoration: BoxDecoration(
@@ -76,71 +78,78 @@ class _ScheduleTimelineState extends State<ScheduleTimeline> {
             Gap(12),
             Column(
               children: [
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          isTicked = !isTicked;
-                        });
-                      },
-                      child: Container(
-                        height: 24,
-                        width: 24,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          // border: Border.all(
-                          //   color: Color(0XFF7D9948),
-                          // ),
-                        ),
-                        child: isTicked
-                            ? Icon(Icons.check_circle, color: primaryColor)
-                            : null,
-                      ),
-                    ),
-                    Gap(10),
-                    Expanded(
-                      child: RadioCardSchedule(
-                        title: "Irrigation",
-                        tileText: "Drip",
-                        subtitle:
-                            "The irrigation is to be given after Field Capacity of the Soil.\nThe irrigation should be given up to 1 to 1.5 feet deep.",
-                      ),
-                    ),
-                  ],
+                _buildRadioCard(
+                  onTap: () {},
+                  index: 0,
+                  title: "Irrigation",
+                  tileText: "Drip",
+                  subtitle:
+                      "The irrigation is to be given after Field Capacity of the Soil.\nThe irrigation should be given up to 1 to 1.5 feet deep.",
+                  image1: null,
+                  image2: null,
+                  image3: null,
                 ),
                 Gap(12),
-                Row(
-                  children: [
-                    Container(
-                      height: 24,
-                      width: 24,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
-                        border: Border.all(
-                          color: Color(0XFF7D9948),
-                        ),
+                _buildRadioCard(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Irrigation(),
                       ),
-                    ),
-                    Gap(10),
-                    Expanded(
-                      child: RadioCardSchedule(
-                        title: "Irrigation",
-                        tileText: "Drip",
-                        subtitle:
-                            "The irrigation is to be given after Field Capacity of the Soil.\nThe irrigation should be given up to 1 to 1.5 feet deep.",
-                        image1: "assets/images/farm_shovel.jpg",
-                        image2: "assets/images/farm_shovel.jpg",
-                        image3: "assets/images/farm_shovel.jpg",
-                      ),
-                    ),
-                  ],
+                    );
+                  },
+                  index: 1,
+                  title: "Irrigation",
+                  tileText: "Drip",
+                  subtitle:
+                      "The irrigation is to be given after Field Capacity of the Soil.\nThe irrigation should be given up to 1 to 1.5 feet deep.",
+                  image1: "assets/images/farm_shovel.jpg",
+                  image2: "assets/images/farm_shovel.jpg",
+                  image3: "assets/images/farm_shovel.jpg",
                 ),
               ],
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Widget _buildRadioCard({
+    required int index,
+    required String title,
+    required String tileText,
+    required String subtitle,
+    required String? image1,
+    required String? image2,
+    required String? image3,
+    required VoidCallback? onTap,
+  }) {
+    return Row(
+      children: [
+        Radio(
+          value: index,
+          groupValue: _selectedOptionIndex,
+          onChanged: (value) {
+            setState(() {
+              _selectedOptionIndex = value as int;
+            });
+          },
+        ),
+        Gap(10),
+        Expanded(
+          child: RadioCardSchedule(
+            onTap: onTap,
+            title: title,
+            tileText: tileText,
+            subtitle: subtitle,
+            image1: image1,
+            image2: image2,
+            image3: image3,
+          ),
+        ),
+      ],
     );
   }
 }

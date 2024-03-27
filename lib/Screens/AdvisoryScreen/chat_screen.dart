@@ -19,6 +19,7 @@ class _ChatScreenState extends State<ChatScreen> {
     double widthP = Dimensions.myWidthThis(context);
     // double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(20),
         child: Row(

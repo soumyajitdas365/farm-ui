@@ -30,7 +30,7 @@ class _ClaimedRewardsTileState extends State<ClaimedRewardsTile> {
           Radius.circular(12),
         ),
         side: BorderSide(
-          color: Color(0XFFEAECF0),
+          color: borderColor
         ),
       ),
       title: Text(

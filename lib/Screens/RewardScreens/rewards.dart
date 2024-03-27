@@ -212,7 +212,7 @@ class _RewardScreenState extends State<RewardScreen> {
                     height: 90 * heightF,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Color(0XFFEAECF0),
+                        color: borderColor
                       ),
                       borderRadius: BorderRadius.all(
                         Radius.circular(12),
@@ -239,7 +239,7 @@ class _RewardScreenState extends State<RewardScreen> {
                     height: 90 * heightF,
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Color(0XFFEAECF0),
+                        color: borderColor
                       ),
                       borderRadius: BorderRadius.all(
                         Radius.circular(12),

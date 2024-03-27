@@ -47,7 +47,7 @@ class _ProductScreenState extends State<ProductScreen> {
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Color(0XFFEAECF0),
+                    color: borderColor
                   ),
                   borderRadius: BorderRadius.all(
                     Radius.circular(10),
@@ -60,7 +60,7 @@ class _ProductScreenState extends State<ProductScreen> {
                       padding: EdgeInsets.symmetric(vertical: 10),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          color: Color(0XFFEAECF0),
+                          color: borderColor
                         ),
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),

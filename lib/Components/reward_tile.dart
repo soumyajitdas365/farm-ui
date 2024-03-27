@@ -34,10 +34,10 @@ class _RewardTileState extends State<RewardTile> {
           Radius.circular(12),
         ),
         side: BorderSide(
-          color: Color(0XFFEAECF0),
+          color: borderColor
         ),
       ),
-      // tileColor: Color(0XFFEAECF0),
+      // tileColor: borderColor
       contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       title: Text(
         widget.title,

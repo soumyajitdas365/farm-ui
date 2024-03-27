@@ -58,7 +58,7 @@ class _PaymentValidationState extends State<PaymentValidation> {
                   Radius.circular(12),
                 ),
                 border: Border.all(
-                  color: Color(0XFFEAECF0),
+                  color: borderColor
                 ),
               ),
               child: Row(
@@ -95,7 +95,7 @@ class _PaymentValidationState extends State<PaymentValidation> {
                   Radius.circular(12),
                 ),
                 border: Border.all(
-                  color: Color(0XFFEAECF0),
+                  color: borderColor
                 ),
               ),
               child: Center(

@@ -1,57 +1,55 @@
 import 'package:dotted_border/dotted_border.dart';
-import 'package:farm_ui/Screens/AdvisoryScreen/advisory_crop_schedule.dart';
+import 'package:farm_ui/Screens/MyFarm/my_farm_name.dart';
 import 'package:farm_ui/Utils/Constants/colors.dart';
 import 'package:farm_ui/Utils/Constants/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-class Advisory extends StatefulWidget {
-  const Advisory({super.key});
+class MyFarmMyPlots extends StatefulWidget {
+  const MyFarmMyPlots({super.key});
 
   @override
-  State<Advisory> createState() => _AdvisoryState();
+  State<MyFarmMyPlots> createState() => _MyFarmMyPlotsState();
 }
 
-class _AdvisoryState extends State<Advisory> {
+class _MyFarmMyPlotsState extends State<MyFarmMyPlots> {
   @override
   Widget build(BuildContext context) {
     double widthP = Dimensions.myWidthThis(context);
     double heightF = Dimensions.myHeightFThis(context);
     return Scaffold(
-      drawer: Drawer(),
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Advisory",
+          "My Plots",
           style: TextStyle(
-            fontSize: 24 * widthP,
-            fontWeight: FontWeight.w600,
-            color: textColor,
-          ),
+              fontSize: 24 * widthP,
+              fontWeight: FontWeight.w600,
+              color: textColor),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Registered Plots",
+              "Registered Plot",
               style: TextStyle(
-                fontSize: 18 * widthP,
-                fontWeight: FontWeight.w600,
-                color: textColor,
-              ),
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18 * widthP,
+                  color: textColor),
             ),
             Gap(14),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const AdvisoryCropSchedule(),
+                        builder: (context) => const MyFarmName(),
                       ),
                     );
                   },

@@ -30,7 +30,7 @@ class _CheckoutState extends State<Checkout> {
             Container(
               decoration: BoxDecoration(
                 border: Border.all(
-                  color: Color(0XFFEAECF0),
+                  color: borderColor
                 ),
                 borderRadius: BorderRadius.all(
                   Radius.circular(10),

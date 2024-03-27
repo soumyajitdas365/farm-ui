@@ -71,7 +71,7 @@ class _SpecificPlotState extends State<SpecificPlot> {
                         Radius.circular(12),
                       ),
                       side: BorderSide(
-                        color: Color(0XFFEAECF0),
+                        color: borderColor
                       ),
                     ),
                     title: Text(
@@ -96,7 +96,7 @@ class _SpecificPlotState extends State<SpecificPlot> {
                         color: Color(0XFFFFF2E3),
                         borderRadius: BorderRadius.circular(50),
                       ),
-                      child: Image.asset("assets/images/palak.png"),
+                      child: Image.asset("assets/crops/palak.png"),
                     ),
                   ),
                   Gap(21),
@@ -122,7 +122,7 @@ class _SpecificPlotState extends State<SpecificPlot> {
                         Radius.circular(12),
                       ),
                       side: BorderSide(
-                        color: Color(0XFFEAECF0),
+                        color: borderColor
                       ),
                     ),
                     title: Text(
@@ -144,7 +144,7 @@ class _SpecificPlotState extends State<SpecificPlot> {
                         Radius.circular(12),
                       ),
                       side: BorderSide(
-                        color: Color(0XFFEAECF0),
+                        color: borderColor
                       ),
                     ),
                     title: Text(
@@ -166,7 +166,7 @@ class _SpecificPlotState extends State<SpecificPlot> {
                         Radius.circular(12),
                       ),
                       side: BorderSide(
-                        color: Color(0XFFEAECF0),
+                        color: borderColor
                       ),
                     ),
                     title: Text(
@@ -205,7 +205,7 @@ class _SpecificPlotState extends State<SpecificPlot> {
                                 Radius.circular(12),
                               ),
                               side: BorderSide(
-                                color: Color(0XFFEAECF0),
+                                color: borderColor
                               ),
                             ),
                             collapsedShape: RoundedRectangleBorder(
@@ -213,7 +213,7 @@ class _SpecificPlotState extends State<SpecificPlot> {
                                 Radius.circular(12),
                               ),
                               side: BorderSide(
-                                color: Color(0XFFEAECF0),
+                                color: borderColor
                               ),
                             ),
                             initiallyExpanded: false,

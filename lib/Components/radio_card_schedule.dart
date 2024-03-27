@@ -32,79 +32,82 @@ class _RadioCardScheduleState extends State<RadioCardSchedule> {
   Widget build(BuildContext context) {
     double widthP = Dimensions.myWidthThis(context);
     double heightF = Dimensions.myHeightFThis(context);
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Color(0XFFEAECF0),
+    return InkWell(
+      onTap: widget.onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: borderColor
+          ),
+          borderRadius: BorderRadius.circular(12),
         ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text(
-                  widget.title,
-                  style: TextStyle(
-                      fontSize: 16 * widthP,
-                      fontWeight: FontWeight.w500,
-                      color: textColor),
-                ),
-                Gap(20),
-                Container(
-                  width: 41 * widthP,
-                  decoration: BoxDecoration(
-                    color: Color(0XFFF3FAF0),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Center(
-                    child: Text(
-                      widget.tileText,
-                      style: TextStyle(fontSize: 10),
-                    ),
-                  ),
-                ),
-                Spacer(),
-                Icon(
-                  Icons.arrow_forward_outlined,
-                  color: primaryColor,
-                ),
-              ],
-            ),
-            Text(
-              widget.subtitle,
-              style: TextStyle(color: secondaryTextColor),
-            ),
-            if (widget.image1 != null ||
-                widget.image2 != null ||
-                widget.image3 != null)
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (widget.image1 != null)
-                    SizedBox(
-                      height: 74 * heightF,
-                      width: 90 * widthP,
-                      child: Image.asset(widget.image1!),
+                  Text(
+                    widget.title,
+                    style: TextStyle(
+                        fontSize: 16 * widthP,
+                        fontWeight: FontWeight.w500,
+                        color: textColor),
+                  ),
+                  Gap(20),
+                  Container(
+                    width: 41 * widthP,
+                    decoration: BoxDecoration(
+                      color: Color(0XFFF3FAF0),
+                      borderRadius: BorderRadius.circular(12),
                     ),
-                  if (widget.image2 != null)
-                    SizedBox(
-                      height: 74 * heightF,
-                      width: 90 * widthP,
-                      child: Image.asset(widget.image2!),
+                    child: Center(
+                      child: Text(
+                        widget.tileText,
+                        style: TextStyle(fontSize: 10),
+                      ),
                     ),
-                  if (widget.image3 != null)
-                    SizedBox(
-                      height: 74 * heightF,
-                      width: 90 * widthP,
-                      child: Image.asset(widget.image3!),
-                    ),
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.arrow_forward_outlined,
+                    color: primaryColor,
+                  ),
                 ],
               ),
-          ],
+              Text(
+                widget.subtitle,
+                style: TextStyle(color: secondaryTextColor),
+              ),
+              if (widget.image1 != null ||
+                  widget.image2 != null ||
+                  widget.image3 != null)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if (widget.image1 != null)
+                      SizedBox(
+                        height: 74 * heightF,
+                        width: 90 * widthP,
+                        child: Image.asset(widget.image1!),
+                      ),
+                    if (widget.image2 != null)
+                      SizedBox(
+                        height: 74 * heightF,
+                        width: 90 * widthP,
+                        child: Image.asset(widget.image2!),
+                      ),
+                    if (widget.image3 != null)
+                      SizedBox(
+                        height: 74 * heightF,
+                        width: 90 * widthP,
+                        child: Image.asset(widget.image3!),
+                      ),
+                  ],
+                ),
+            ],
+          ),
         ),
       ),
     );

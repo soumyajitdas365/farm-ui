@@ -39,7 +39,7 @@ class _ScheduleCalendarState extends State<ScheduleCalendar> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Color(0XFFEAECF0),
+                    color: borderColor
                   ),
                 ),
                 titleCentered: true,
@@ -53,7 +53,7 @@ class _ScheduleCalendarState extends State<ScheduleCalendar> {
                 isTodayHighlighted: true,
                 tableBorder: TableBorder.symmetric(
                   outside: BorderSide(
-                    color: Color(0XFFEAECF0),
+                    color: borderColor
                   ),
                 ),
                 todayDecoration: BoxDecoration(
