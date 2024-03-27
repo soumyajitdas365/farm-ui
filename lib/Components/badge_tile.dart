@@ -34,7 +34,7 @@ class _BadgeTileState extends State<BadgeTile> {
             Radius.circular(12),
           ),
           side: BorderSide(
-            color: Color(0XFFEAECF0),
+            color: borderColor
           ),
         ),
         title: Text(

@@ -34,7 +34,7 @@ class _SubscriptionTileState extends State<SubscriptionTile> {
           Radius.circular(12),
         ),
         border: Border.all(
-          color: Color(0XFFEAECF0),
+          color: borderColor
         ),
       ),
       child: ListTile(

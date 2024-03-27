@@ -21,3 +21,5 @@ Color profileIcon = Color(0XFFFFECD6);
 Color chipColor = Color(0XFFF7F0E8);
 
 Color secondaryTextColor =Color(0XFF838FA0);
+
+Color borderColor = Color(0XFFEAECF0);
