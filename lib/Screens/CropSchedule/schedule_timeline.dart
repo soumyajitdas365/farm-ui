@@ -1,9 +1,11 @@
+import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:farm_ui/Components/radio_card_schedule.dart';
 import 'package:farm_ui/Screens/CropSchedule/irrigation.dart';
 import 'package:farm_ui/Utils/Constants/colors.dart';
 import 'package:farm_ui/Utils/Constants/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
 import 'package:table_calendar/table_calendar.dart';
 
 class ScheduleTimeline extends StatefulWidget {
@@ -15,7 +17,10 @@ class ScheduleTimeline extends StatefulWidget {
 
 class _ScheduleTimelineState extends State<ScheduleTimeline> {
   int _selectedOptionIndex = -1;
+  final EasyInfiniteDateTimelineController _controller =
+      EasyInfiniteDateTimelineController();
 
+  int? selected_value;
   @override
   Widget build(BuildContext context) {
     double widthP = Dimensions.myWidthThis(context);
@@ -36,51 +41,49 @@ class _ScheduleTimelineState extends State<ScheduleTimeline> {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            TableCalendar(
-              headerStyle: HeaderStyle(
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: borderColor
+            EasyDateTimeLine(
+              itemBuilder: (context, dayNumber, dayName, monthName, fullDate,
+                  isSelected) {
+                return Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all()),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(dayName),
+                      Text(dayNumber),
+                      Text(monthName),
+                    ],
                   ),
-                ),
-                titleCentered: true,
-                titleTextStyle: TextStyle(
-                  color: textColor,
-                  fontWeight: FontWeight.w700,
-                ),
-                formatButtonVisible: false,
-              ),
-              calendarStyle: CalendarStyle(
-                isTodayHighlighted: true,
-                tableBorder: TableBorder.symmetric(
-                  outside: BorderSide(
-                    color: borderColor
-                  ),
-                ),
-                todayDecoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: primaryColor,
-                ),
-                defaultTextStyle: TextStyle(
-                    color: textColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15),
-                weekendTextStyle: TextStyle(
-                    color: textColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 15),
-              ),
-              firstDay: DateTime.utc(2010, 10, 16),
-              lastDay: DateTime.utc(2030, 3, 14),
-              focusedDay: DateTime.now(),
-              calendarFormat: CalendarFormat.week,
+                );
+              },
+              // controller: _controller,
+              // firstDate: DateTime(2023),
+              // focusDate: DateTime.now(),
+              // lastDate: DateTime(2033, 12, 31),
+              onDateChange: (selectedDate) {
+                // setState(() {
+                //   _focusDate = selectedDate;
+                // });
+              },
+              initialDate: DateTime.now(),
             ),
             Gap(12),
             Column(
               children: [
                 _buildRadioCard(
-                  onTap: () {},
-                  index: 0,
+                  onTap: () {
+                    setState(() {
+                      if (!(selected_value == 0)) {
+                        selected_value = 0;
+                      } else {
+                        selected_value = null;
+                      }
+                    });
+                  },
+                  cardTap: () {},
+                  value: selected_value == 0,
                   title: "Irrigation",
                   tileText: "Drip",
                   subtitle:
@@ -92,6 +95,15 @@ class _ScheduleTimelineState extends State<ScheduleTimeline> {
                 Gap(12),
                 _buildRadioCard(
                   onTap: () {
+                    setState(() {
+                      if (!(selected_value == 1)) {
+                        selected_value = 1;
+                      } else {
+                        selected_value = null;
+                      }
+                    });
+                  },
+                  cardTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -99,7 +111,7 @@ class _ScheduleTimelineState extends State<ScheduleTimeline> {
                       ),
                     );
                   },
-                  index: 1,
+                  value: selected_value == 1,
                   title: "Irrigation",
                   tileText: "Drip",
                   subtitle:
@@ -117,30 +129,42 @@ class _ScheduleTimelineState extends State<ScheduleTimeline> {
   }
 
   Widget _buildRadioCard({
-    required int index,
+    // required int index,
+
+    required bool value,
     required String title,
     required String tileText,
     required String subtitle,
     required String? image1,
     required String? image2,
     required String? image3,
+    required VoidCallback? cardTap,
     required VoidCallback? onTap,
   }) {
     return Row(
       children: [
-        Radio(
-          value: index,
-          groupValue: _selectedOptionIndex,
-          onChanged: (value) {
-            setState(() {
-              _selectedOptionIndex = value as int;
-            });
-          },
+        InkWell(
+          onTap: onTap,
+          child: Container(
+            padding: EdgeInsets.all(2),
+            decoration: BoxDecoration(
+              border: Border.all(
+                  color: value
+                      ? Colors.transparent
+                      : Color.fromARGB(255, 51, 174, 55).withOpacity(0.5)),
+              shape: BoxShape.circle,
+              color: value ? primaryColor : Colors.transparent,
+            ),
+            child: Icon(
+              Icons.done,
+              color: white,
+            ),
+          ),
         ),
         Gap(10),
         Expanded(
           child: RadioCardSchedule(
-            onTap: onTap,
+            onTap: cardTap,
             title: title,
             tileText: tileText,
             subtitle: subtitle,
